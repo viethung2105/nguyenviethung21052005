@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng Hiệu Tích Thương</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, select {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tổng Hiệu Tích Thương</h1>
+    <br>
+    <input type="number" id="num1" placeholder="Số thứ nhất">
+    <select id="operation">
+        <option value="+">Cộng</option>
+        <option value="-">Trừ</option>
+        <option value="*">Nhân</option>
+        <option value="/">Chia</option>
+    </select>
+    <input type="number" id="num2" placeholder="Số thứ hai">
+    <button onclick="calculate()">Tính</button>
+    <h2>Kết quả: <span id="result"></span></h2>
+
+    <script>
+        function calculate() {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const operation = document.getElementById("operation").value;
+            let result;
+
+            switch (operation) {
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    result = num2 !== 0 ? num1 / num2 : "Không thể chia cho 0";
+                    break;
+                default:
+                    result = "Phép toán không hợp lệ";
+            }
+
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+</html>
+<link rel="stylesheet" href="styles.css">
+<nav>
+    <a href="index.html">Trang chủ</a>
+</nav>

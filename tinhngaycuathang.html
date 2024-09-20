@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days in Month</title>
+    <script>
+        function calculateDays() {
+            let month = parseInt(document.getElementById("month").value);
+            let year = parseInt(document.getElementById("year").value);
+            let days = new Date(year, month, 0).getDate();
+            document.getElementById("days").innerHTML = "Days: " + days;
+        }
+    </script>
+</head>
+<body>
+    <h2>Tính ngày của tháng </h2>
+    <input type="number" id="month" placeholder="Month (1-12)"> 
+    <input type="number" id="year" placeholder="Year"> 
+    <button onclick="calculateDays()">Tính</button>
+    <p id="days"></p>
+</body>
+</html>
+
+<link rel="stylesheet" href="styles.css">
+<nav>
+    <a href="index.html">Trang chủ</a>
+</nav>

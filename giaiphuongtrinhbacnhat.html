@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giải Phương Trình Bậc Nhất</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Giải Phương Trình Bậc Nhất</h1>
+    <p>Nhập vào các hệ số a và b của phương trình ax + b = 0:</p>
+    <input type="number" id="a" placeholder="Hệ số a">
+    <input type="number" id="b" placeholder="Hệ số b">
+    <button onclick="solveEquation()">Giải</button>
+    <h2>Kết quả: <span id="result"></span></h2>
+
+    <script>
+        function solveEquation() {
+            const a = parseFloat(document.getElementById("a").value);
+            const b = parseFloat(document.getElementById("b").value);
+            let result;
+
+            if (a === 0) {
+                if (b === 0) {
+                    result = "Phương trình vô số nghiệm.";
+                } else {
+                    result = "Phương trình vô nghiệm.";
+                }
+            } else {
+                const x = -b / a;
+                result = `Nghiệm của phương trình là: x = ${x}`;
+            }
+
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+</html>
+<nav>
+    <a href="index.html">Trang chủ</a>
+</nav>
+<link rel="stylesheet" href="styles.css">
